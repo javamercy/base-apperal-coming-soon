@@ -1,0 +1,205 @@
+/* ## Colors
+
+### Primary
+
+- Desaturated Red: hsl(0, 36%, 70%)
+- Soft Red: hsl(0, 93%, 68%)
+
+### Neutral
+
+- Dark Grayish Red: hsl(0, 6%, 24%)
+
+### Gradients
+
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+
+:root {
+  --desatured-red: hsl(0, 24%, 41%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-grayish-red: hsl(0, 6%, 24%);
+  --dark-grayish-red-a: hsla(0, 6%, 24%, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  line-height: 1.2;
+  font-family: "Josefin Sans", sans-serif;
+}
+.container {
+  width: 85%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.3);
+}
+
+.grid-left {
+  padding: 3rem 6rem;
+  background: url("/images/bg-pattern-desktop.svg") no-repeat center;
+  background-size: cover;
+}
+
+.grid-left .logo {
+  margin-bottom: 5rem;
+}
+
+.logo img {
+  width: 50%;
+}
+
+.grid-left h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  letter-spacing: 8px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.grid-left .hero-mobile {
+  display: none;
+}
+
+.grid-left h1 div:first-child {
+  color: var(--desatured-red);
+  font-weight: 300;
+}
+
+.grid-left p {
+  color: var(--soft-red);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.hero img {
+  height: 100%;
+  object-fit: cover;
+}
+
+form {
+  position: relative;
+}
+
+form input {
+  outline: none;
+  border: 1px solid var(--dark-grayish-red-a);
+  border-radius: 30px;
+  font-size: 1.2rem;
+  padding: 1rem 1.2rem;
+  width: 100%;
+}
+
+form input::placeholder {
+  font-size: 0.9rem;
+  color: var(--desatured-red);
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+form button {
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  padding: 1.1rem 2.5rem;
+  border-radius: 30px;
+  position: absolute;
+  right: -0.2rem;
+  top: 0;
+  background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 74%, 74%));
+}
+
+form i {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: red;
+  padding: 0.25rem 0.6rem;
+  color: #fff;
+  border: 1px solid red;
+  border-radius: 50%;
+}
+
+form button:hover {
+  filter: contrast(0.7);
+}
+.alert {
+  position: absolute;
+  bottom: -2rem;
+  left: 1rem;
+}
+.alert-red {
+  color: var(--soft-red);
+}
+
+.alert-green {
+  color: #12ac86;
+}
+
+@media screen and (max-width: 750px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 100%;
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .grid-left {
+    padding: 0;
+  }
+  .grid-left .logo {
+    width: 100%;
+    margin: 0;
+    padding: 3rem 2rem;
+  }
+  .logo img {
+    width: 40%;
+  }
+
+  .grid-left h1 {
+    text-align: center;
+  }
+
+  .grid-left .hero-mobile {
+    display: block;
+    margin-bottom: 3rem;
+    object-fit: cover;
+  }
+
+  .hero {
+    display: none;
+  }
+  .content {
+    padding-bottom: 5rem;
+  }
+  .content p {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+  }
+  form {
+    margin: 0 2rem;
+  }
+
+  form button {
+    top: -0.2rem;
+  }
+}
